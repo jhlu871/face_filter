@@ -11,7 +11,7 @@ import numpy as np
 
 def remove_background(img):
     gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
-    ret,thresh = cv2.threshold(gray,200,255,cv2.THRESH_BINARY_INV)
+    ret,thresh = cv2.threshold(gray,250,255,cv2.THRESH_BINARY_INV)
     
     kernel = np.ones((2,2),np.float32)/4
     smoothed = cv2.filter2D(thresh,-1,kernel)
